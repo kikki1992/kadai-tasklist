@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <h1>id: <%= @task.id %>の詳細ページ</h1>           
+</nav>
+<div class="container">
+  <div class="row">
+    <table class=" col-8 table table-bordered">
+      <th class="text-center">ID</th>
+      <th class="text-center">タスク名</th>
+        <tr>
+          <td class="text-center"><%=@task.id %></td>
+          <td class="text-center"><%=@task.content %></td>
+        </tr>
+    </table>
+  </div>
+  <div>
+    <%= link_to "一覧に戻る",tasks_path %><br>
+    <%= link_to "編集する",edit_task_path %><br>
+    <%= link_to 'このタスクを削除する', @task, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %>
+  </div>
+</div>

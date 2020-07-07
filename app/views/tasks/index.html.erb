@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <h1>タスクリスト</h1>           
+</nav>
+<div class="container">
+  <div class="row">
+    <table class="col-8 table table-bordered">
+      <th class="text-center">ID</th>
+      <th class="text-center">タスク名</th>
+
+      <% @tasks.each do |task| %>
+        <tr>
+          <td class="text-center"><%=link_to task.id, task %></td>
+          <td class="text-center"><%=task.content %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div>
+    <%= link_to "新規タスク登録",new_task_path %>
+  </div>
+
+</div>
