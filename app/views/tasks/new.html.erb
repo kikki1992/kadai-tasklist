@@ -1,18 +1,4 @@
 <nav class="navbar navbar-light bg-light">
   <h1>メッセージ新規作成ページ</h1>           
 </nav>
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <%= form_with(model: @task, local: true) do |f| %>
-      
-        <%= f.label :content, "タスク" %>
-        <%= f.text_field :content %>
-    
-        <%= f.submit "追加" %>
-
-      <% end %>
-      <%= link_to "一覧に戻る",tasks_path %>
-    </div>
-  </div>
-</div>
+<%= render "form" ,task: @task %>
