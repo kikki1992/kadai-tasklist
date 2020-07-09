@@ -6,11 +6,13 @@
     <table class="col-8 table table-bordered">
       <th class="text-center">ID</th>
       <th class="text-center">タスク名</th>
+      <th class="text-center">状態</th>
 
       <% @tasks.each do |task| %>
         <tr>
           <td class="text-center"><%=link_to task.id, task %></td>
           <td class="text-center"><%=task.content %></td>
+          <td class="text-center"><%=task.status %></td>
         </tr>
       <% end %>
     </table>
