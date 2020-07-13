@@ -1,34 +1,25 @@
 
-<% if logged_in? %>
-  <div class="container">
-    <div class="row">
-      <table class="col-8 table table-bordered">
-        <th class="text-center">ID</th>
-        <th class="text-center">タスク名</th>
-        <th class="text-center">状態</th>
-  
-        <% @tasks.each do |task| %>
-          <tr>
-            <td class="text-center"><%=link_to task.id, task %></td>
-            <td class="text-center"><%=task.content %></td>
-            <td class="text-center"><%=task.status %></td>
-          </tr>
-        <% end %>
-      </table>
-    </div>
-    <div>
-      <%= link_to "新規タスク登録",new_task_path %>
-    </div>
-  </div>
+<div class="container">
+  <div class="row">
+    <table class="col-8 table table-bordered">
+      <th class="text-center">ID</th>
+      <th class="text-center">タスク名</th>
+      <th class="text-center">状態</th>
 
-  
-<% else %>
-  <div class="center jumbotron">
-    <div class="text-center">
-      <h1>TaskList</h1>
-      <%= link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary' %>
-    </div>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td class="text-center"><%=link_to task.id, task %></td>
+          <td class="text-center"><%=task.content %></td>
+          <td class="text-center"><%=task.status %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
-<% end %>
+  <div>
+    <%= link_to "新規タスク登録",new_task_path %>
+  </div>
+</div>
+
+
 
   
