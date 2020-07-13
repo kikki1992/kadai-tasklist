@@ -3,10 +3,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:show, :edit ,:update, :destroy]
   
   def index
-    if logged_in?
-      @task = current_user.tasks.build  # form_with 用
       @tasks = current_user.tasks.order(id: :desc)
-    end
   end 
   
   def show
@@ -54,7 +51,7 @@ class TasksController < ApplicationController
   private
   #strong parameter
   def task_params
-    params.require(:task).permit(:content, :status, :users)
+    params.require(:task).permit(:content, :status)
   end
 
   def correct_user
